@@ -1,1 +1,1 @@
-Prueba de ingreso vision.com
+Prueba de ingreso

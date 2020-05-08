@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidThechnicalTest</string>
+    <string name="lbl_artist_name"></string>
+    <string name="lbl_empty_string"></string>
 </resources>

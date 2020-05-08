@@ -15,13 +15,16 @@ class LastFmGeoViewModel : ViewModel() {
     init {
         viewModelScope.launch {
             val searchResponse = WebClient.client.fetchImages()
-            val photosList = searchResponse.topartists.artist.map { photo ->
+            val lastFmList = searchResponse.topartists.artist.map { lastFmData ->
                 Artist(
-                    name = photo.name,
-                    text = photo.image[3].text
+                    name = lastFmData.name,
+                    listeners = lastFmData.listeners,
+                    mbid = lastFmData.mbid,
+                    url = lastFmData.url,
+                    text = lastFmData.image[0].text
                 )
             }
-            mutablePhotosLiveData.postValue(photosList)
+            mutablePhotosLiveData.postValue(lastFmList)
         }
     }
 }
